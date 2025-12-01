@@ -1,0 +1,116 @@
+/* Dashboard container: chia 2 cột */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f2f4f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar bên trái (cố định nếu cần) */
+.dashboard-container > .sidebar {
+  width: 250px; /* khớp với Sidebar */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1f2937;
+  color: white;
+  overflow-y: auto;
+}
+
+/* Khu vực bên phải */
+.dashboard-right {
+  margin-left: 250px; /* bằng width sidebar */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* TopBar */
+.dashboard-right > .topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Khung trắng cho content */
+.content-box {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+/* Hover row */
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Hình ảnh trong table */
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Button chỉnh sửa */
+.edit-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background: #7fc7d9;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.edit-btn:hover {
+  background: #57a3b9;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .dashboard-right {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  table th, table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
